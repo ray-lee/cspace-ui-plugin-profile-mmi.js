@@ -13,6 +13,7 @@ export default () => ({
   messages,
   className: styles.common,
   prettyUrls: true,
+  structDateVocabNames: ['dateassociation'],
   tenantId: '42',
   pluginInfo: {
     cspaceUIPluginProfileMMI: {
