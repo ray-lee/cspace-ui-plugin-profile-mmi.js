@@ -6,7 +6,7 @@ export default {
     messages: defineMessages({
       type: {
         id: 'idGenerator.mmi-loanout-lot.type',
-        defaultMessage: 'Loan Out (Lot)',
+        defaultMessage: 'Loan Out',
       },
     }),
   },

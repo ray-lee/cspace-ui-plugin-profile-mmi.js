@@ -7,6 +7,7 @@ export default () => (configContext) => ({
     movement: {
       fields: fields(configContext),
       lockable: false,
+      lockOnSave: false,
     },
   },
 });
