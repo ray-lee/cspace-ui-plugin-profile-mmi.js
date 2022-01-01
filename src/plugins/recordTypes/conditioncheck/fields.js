@@ -25,6 +25,9 @@ export default (configContext) => {
                 defaultMessage: 'Loan in/out exhibition',
               },
             }),
+            searchView: {
+              type: TextInput,
+            },
             view: {
               type: TextInput,
               props: {
