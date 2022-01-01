@@ -1,4 +1,5 @@
 import fields from './fields';
+import forms from './forms';
 import optionLists from './optionLists';
 
 export default () => (configContext) => ({
@@ -6,6 +7,7 @@ export default () => (configContext) => ({
   recordTypes: {
     conditioncheck: {
       fields: fields(configContext),
+      forms: forms(configContext),
     },
   },
 });

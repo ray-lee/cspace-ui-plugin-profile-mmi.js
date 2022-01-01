@@ -6,6 +6,13 @@ import { defineMessages } from 'react-intl';
  */
 export default () => ({
   optionLists: {
+    searchResultPagePageSizes: {
+      values: [
+        '20',
+        '50',
+        '100',
+      ],
+    },
     nameSources: {
       values: [
         'aficatalog',

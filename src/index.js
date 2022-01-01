@@ -12,6 +12,8 @@ export default () => ({
   logo,
   messages,
   className: styles.common,
+  defaultSearchPageSize: 50,
+  defaultSearchPanelSize: 20,
   prettyUrls: true,
   structDateVocabNames: ['dateassociation'],
   tenantId: '42',

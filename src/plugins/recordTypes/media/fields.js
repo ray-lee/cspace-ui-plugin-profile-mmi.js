@@ -4,6 +4,7 @@ export default (configContext) => {
   const {
     CheckboxInput,
     OptionPickerInput,
+    TermPickerInput,
   } = configContext.inputComponents;
 
   const {
@@ -62,6 +63,22 @@ export default (configContext) => {
               type: OptionPickerInput,
               props: {
                 source: 'mediaStatuses',
+              },
+            },
+          },
+        },
+        mediaView: {
+          [config]: {
+            messages: defineMessages({
+              name: {
+                id: 'field.media_mmi.mediaView.name',
+                defaultMessage: 'View',
+              },
+            }),
+            view: {
+              type: TermPickerInput,
+              props: {
+                source: 'mediaview',
               },
             },
           },

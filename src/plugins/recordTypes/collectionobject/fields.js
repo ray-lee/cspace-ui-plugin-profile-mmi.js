@@ -137,6 +137,23 @@ export default (configContext) => {
             },
           },
         },
+        referenceGroupList: {
+          [config]: {
+            view: {
+              type: CompoundInput,
+            },
+          },
+          referenceGroup: {
+            [config]: {
+              messages: defineMessages({
+                name: {
+                  id: 'field.collectionobjects_common.referenceGroup.name',
+                  defaultMessage: 'Reference',
+                },
+              }),
+            },
+          },
+        },
       },
       'ns2:collectionobjects_mmi': {
         [config]: {

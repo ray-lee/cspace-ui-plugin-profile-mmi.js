@@ -15,7 +15,7 @@ export default {
     messages: defineMessages({
       type: {
         id: 'idGenerator.mmi-loanin-lot.type',
-        defaultMessage: 'Loan In (Lot)',
+        defaultMessage: 'Loan In',
       },
     }),
   },

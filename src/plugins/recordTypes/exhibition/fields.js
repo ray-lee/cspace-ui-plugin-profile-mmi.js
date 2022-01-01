@@ -213,11 +213,11 @@ export default (configContext) => {
                 messages: defineMessages({
                   fullName: {
                     id: 'field.exhibitions_mmi.mmiExhibitionObjectSeqNum.fullName',
-                    defaultMessage: 'Object seq. #',
+                    defaultMessage: 'Object floor plan ID',
                   },
                   name: {
                     id: 'field.exhibitions_mmi.mmiExhibitionObjectSeqNum.name',
-                    defaultMessage: 'Seq. #',
+                    defaultMessage: 'Floor plan ID',
                   },
                 }),
                 view: {

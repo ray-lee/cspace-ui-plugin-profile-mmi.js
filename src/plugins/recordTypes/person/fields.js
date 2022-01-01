@@ -10,6 +10,7 @@ export default (configContext) => {
   } = configContext.inputComponents;
 
   const {
+    mergeStrategy,
     configKey: config,
   } = configContext.configHelpers;
 
@@ -36,6 +37,7 @@ export default (configContext) => {
               [config]: {
                 view: {
                   type: TextInput,
+                  props: mergeStrategy.override({}),
                 },
               },
             },
@@ -43,6 +45,7 @@ export default (configContext) => {
               [config]: {
                 view: {
                   type: TextInput,
+                  props: mergeStrategy.override({}),
                 },
               },
             },

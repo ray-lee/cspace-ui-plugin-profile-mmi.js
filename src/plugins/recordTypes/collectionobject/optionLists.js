@@ -76,4 +76,17 @@ export default {
       },
     }),
   },
+  contentEntityTypes: {
+    values: [
+      'depicts',
+      'references',
+      'seealso',
+    ],
+    messages: defineMessages({
+      seealso: {
+        id: 'option.contentEntityTypes.seealso',
+        defaultMessage: 'see also',
+      },
+    }),
+  },
 };
