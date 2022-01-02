@@ -24,8 +24,8 @@ const template = (configContext) => {
             <Field name="conditionCheckMethod" />
           </Col>
           <Col>
-            <Field name="conditionCheckReason" />
             <Field name="conditionChecker" />
+            <Field name="conditionCheckReason" />
             <Field name="conditionCheckReasonExhibition" subpath="ns2:conditionchecks_mmi" />
           </Col>
         </Cols>

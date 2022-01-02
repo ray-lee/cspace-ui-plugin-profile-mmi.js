@@ -1,5 +1,13 @@
 import { defineMessages } from 'react-intl';
 
+const isLoanReason = (recordData) => {
+  const reason = recordData.getIn(
+    ['document', 'ns2:conditionchecks_common', 'conditionCheckReason'],
+  );
+
+  return (reason === 'loanin' || reason === 'loanout');
+};
+
 export default (configContext) => {
   const {
     TextInput,
@@ -19,6 +27,7 @@ export default (configContext) => {
         },
         conditionCheckReasonExhibition: {
           [config]: {
+            compute: ({ data, recordData }) => (isLoanReason(recordData) ? data : ''),
             messages: defineMessages({
               name: {
                 id: 'field.conditionchecks_mmi.conditionCheckReasonExhibition.name',
@@ -31,7 +40,7 @@ export default (configContext) => {
             view: {
               type: TextInput,
               props: {
-                readOnly: true,
+                readOnly: ({ recordData }) => !isLoanReason(recordData),
               },
             },
           },
