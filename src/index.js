@@ -6,6 +6,7 @@ import { defineMessages } from 'react-intl';
 import logo from '../images/logo.png';
 import messages from './messages';
 import plugins from './plugins';
+import { formatIDNumber } from './utils';
 import styles from '../styles/cspace-ui-plugin-profile/mmi.css';
 
 export default () => ({
@@ -14,6 +15,7 @@ export default () => ({
   className: styles.common,
   defaultSearchPageSize: 50,
   defaultSearchPanelSize: 20,
+  idGeneratorTransform: formatIDNumber,
   prettyUrls: true,
   structDateVocabNames: ['dateassociation'],
   tenantId: '42',
