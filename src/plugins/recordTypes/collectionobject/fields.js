@@ -17,6 +17,10 @@ export default (configContext) => {
   } = configContext.configHelpers;
 
   const {
+    getDisplayName,
+  } = configContext.refNameHelpers;
+
+  const {
     DATA_TYPE_BOOL,
   } = configContext.dataTypes;
 
@@ -261,12 +265,33 @@ export default (configContext) => {
               type: TermPickerInput,
               props: {
                 source: 'artifactclassworktype',
+                transformTerms: (transformContext, items) => (
+                  // The artifactclassworktype list contains both artifact classes and work types.
+                  // Artifact classes are the terms that don't start with a parenthesis.
+
+                  items.filter((item) => !item.displayName.startsWith('('))
+                ),
               },
             },
           },
         },
         workType: {
           [config]: {
+            compute: ({ data, recordData }) => {
+              // If the currently selected work type does not belong to the currently selected
+              // artifact class, delete it.
+
+              const artifactClass = getDisplayName(
+                recordData.getIn(
+                  ['document', 'ns2:collectionobjects_mmi', 'artifactClass'],
+                ),
+              );
+
+              const prefix = `(${artifactClass}) `;
+              const workType = getDisplayName(data);
+
+              return (workType.startsWith(prefix) ? data : '');
+            },
             messages: defineMessages({
               name: {
                 id: 'field.collectionobjects_mmi.workType.name',
@@ -277,6 +302,37 @@ export default (configContext) => {
               type: TermPickerInput,
               props: {
                 source: 'artifactclassworktype',
+                transformTerms: ({ recordData }, items) => {
+                  // Show only the terms from artifactclassworktype that are work types, and
+                  // belong to the selected artifact class. These are the terms that are prefixed
+                  // with the artifact class, in parentheses.
+
+                  const artifactClass = recordData && getDisplayName(
+                    recordData.getIn(
+                      ['document', 'ns2:collectionobjects_mmi', 'artifactClass'],
+                    ),
+                  );
+
+                  const prefix = `(${artifactClass}) `;
+                  const filteredItems = items.filter((item) => item.displayName.startsWith(prefix));
+
+                  // Remove the prefix from the remaining items.
+
+                  const renamedItems = filteredItems.map((item) => {
+                    const { displayName } = item;
+
+                    const noParensDisplayName = displayName
+                      ? displayName.substring(prefix.length)
+                      : displayName;
+
+                    return {
+                      ...item,
+                      displayName: noParensDisplayName,
+                    };
+                  });
+
+                  return renamedItems;
+                },
               },
             },
           },
