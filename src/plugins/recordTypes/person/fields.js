@@ -18,6 +18,14 @@ export default (configContext) => {
     extensions,
   } = configContext.config;
 
+  const personStructDateInput = {
+    type: StructuredDateInput,
+    props: {
+      // Make association a dynamic term list.
+      structDateVocabNames: ['dateassociation', 'dateera', 'datecertainty', 'datequalifier'],
+    },
+  };
+
   return {
     document: {
       'ns2:persons_common': {
@@ -64,16 +72,14 @@ export default (configContext) => {
         birthDateGroup: {
           [config]: {
             view: {
-              // TODO: PersonStructuredDateInput
-              type: StructuredDateInput,
+              ...personStructDateInput,
             },
           },
         },
         deathDateGroup: {
           [config]: {
             view: {
-              // TODO: PersonStructuredDateInput
-              type: StructuredDateInput,
+              ...personStructDateInput,
             },
           },
           ...extensions.structuredDate.fields,

@@ -24,6 +24,14 @@ export default (configContext) => {
     DATA_TYPE_BOOL,
   } = configContext.dataTypes;
 
+  const catalogingStructDateInput = {
+    type: StructuredDateInput,
+    props: {
+      // Make association a dynamic term list.
+      structDateVocabNames: ['dateassociation', 'dateera', 'datecertainty', 'datequalifier'],
+    },
+  };
+
   return {
     document: {
       'ns2:collectionobjects_common': {
@@ -100,8 +108,7 @@ export default (configContext) => {
           objectProductionDateGroup: {
             [config]: {
               view: {
-                // TODO: CatalogingStructuredDateInput
-                type: StructuredDateInput,
+                ...catalogingStructDateInput,
               },
             },
           },
@@ -134,8 +141,7 @@ export default (configContext) => {
             assocStructuredDateGroup: {
               [config]: {
                 view: {
-                  // TODO: CatalogingStructuredDateInput
-                  type: StructuredDateInput,
+                  ...catalogingStructDateInput,
                 },
               },
             },

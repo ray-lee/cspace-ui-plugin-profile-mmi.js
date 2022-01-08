@@ -14,6 +14,14 @@ export default (configContext) => {
     configKey: config,
   } = configContext.configHelpers;
 
+  const workStructDateInput = {
+    type: StructuredDateInput,
+    props: {
+      // Make association a dynamic term list.
+      structDateVocabNames: ['dateassociation', 'dateera', 'datecertainty', 'datequalifier'],
+    },
+  };
+
   return {
     document: {
       'ns2:works_common': {
@@ -35,8 +43,7 @@ export default (configContext) => {
           workDateGroup: {
             [config]: {
               view: {
-                // TODO: WorkStructuredDateInput
-                type: StructuredDateInput,
+                ...workStructDateInput,
               },
             },
           },

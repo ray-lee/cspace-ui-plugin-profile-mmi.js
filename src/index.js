@@ -17,7 +17,6 @@ export default () => ({
   defaultSearchPanelSize: 20,
   idGeneratorTransform: formatIDNumber,
   prettyUrls: true,
-  structDateVocabNames: ['dateassociation', 'dateera', 'datecertainty', 'datequalifier'],
   tenantId: '42',
   pluginInfo: {
     cspaceUIPluginProfileMMI: {
