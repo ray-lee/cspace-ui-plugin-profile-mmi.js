@@ -64,15 +64,39 @@ export default {
     messages: defineMessages({
       notyetassigned: {
         id: 'option.collectionCategories.notyetassigned',
-        defaultMessage: 'not yet assigned',
+        defaultMessage: 'Not yet assigned',
+      },
+      distribution: {
+        id: 'option.collectionCategories.distribution',
+        defaultMessage: 'Distribution',
+      },
+      exhibition: {
+        id: 'option.collectionCategories.exhibition',
+        defaultMessage: 'Exhibition',
       },
       industryasawhole: {
         id: 'option.collectionCategories.industryasawhole',
-        defaultMessage: 'industry (as a whole)',
+        defaultMessage: 'Industry (as a whole)',
+      },
+      marketing: {
+        id: 'option.collectionCategories.marketing',
+        defaultMessage: 'Marketing',
+      },
+      merchandising: {
+        id: 'option.collectionCategories.merchandising',
+        defaultMessage: 'Merchandising',
+      },
+      production: {
+        id: 'option.collectionCategories.production',
+        defaultMessage: 'Production',
+      },
+      reception: {
+        id: 'option.collectionCategories.reception',
+        defaultMessage: 'Reception',
       },
       worksofart: {
         id: 'option.collectionCategories.worksofart',
-        defaultMessage: 'works of art',
+        defaultMessage: 'Works of art',
       },
     }),
   },
