@@ -15,6 +15,15 @@ export default (configContext) => {
             },
           },
         },
+        normalLocation: {
+          [config]: {
+            view: {
+              props: {
+                source: 'location/local',
+              },
+            },
+          },
+        },
         currentLocation: {
           [config]: {
             view: {
