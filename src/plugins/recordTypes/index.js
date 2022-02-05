@@ -4,6 +4,7 @@ import conditioncheck from './conditioncheck';
 import concept from './concept';
 import contact from './contact';
 import exhibition from './exhibition';
+import group from './group';
 import intake from './intake';
 import loanin from './loanin';
 import loanout from './loanout';
@@ -23,6 +24,7 @@ export default [
   conditioncheck,
   contact,
   exhibition,
+  group,
   intake,
   loanin,
   loanout,
