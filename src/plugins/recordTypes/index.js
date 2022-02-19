@@ -14,6 +14,7 @@ import movement from './movement';
 import organization from './organization';
 import person from './person';
 import place from './place';
+import uoc from './uoc';
 import valuation from './valuation';
 import work from './work';
 
@@ -34,6 +35,7 @@ export default [
   organization,
   person,
   place,
+  uoc,
   valuation,
   work,
 ];
